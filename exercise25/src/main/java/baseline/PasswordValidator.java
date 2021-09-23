@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.regex.Pattern;
 
-final class PasswordValidator {
+final class PasswordValidator{
     private static final int MIN_STRONG_PASS_LENGTH = 8;
 
     private static final Pattern LETTERS = Pattern.compile("[\\p{IsAlphabetic}]+");
