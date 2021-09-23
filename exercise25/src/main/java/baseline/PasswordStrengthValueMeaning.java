@@ -5,7 +5,7 @@
 package baseline;
 
 final class PasswordStrengthValueMeaning {
-    
+
     public static final int VERY_WEAK_PASS_NUM = 1;
     public static final int WEAK_PASS_NUM = 2;
     public static final int STRONG_PASS_NUM = 3;
