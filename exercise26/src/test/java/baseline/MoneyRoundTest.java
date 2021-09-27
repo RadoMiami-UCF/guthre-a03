@@ -11,6 +11,8 @@ class MoneyRoundTest {
         /*
         Question: Why did I want roundToXPlaces to be so robust? It's not like I'm going to use it at anything but
         precision 2.
+        Answer: It was probably because I could reuse this code if I ever needed to round a number to a certain decimal
+        precision.
         */
         assertEquals(1.24, MoneyRound.roundToXPlaces(1.2345, 2),
                 0.00001, "Error rounding 1.2345 to 1.24");
