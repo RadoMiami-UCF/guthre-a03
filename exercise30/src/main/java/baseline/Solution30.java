@@ -10,7 +10,7 @@ public class Solution30 {
         //In the higher loop, execute the lower loop once, then add a line break.
         for(var j = 1; j <= MULTIPLICATION_TABLE_HEIGHT; j++) {
             for(var k = 1; k <= MULTIPLICATION_TABLE_WIDTH; k++) {
-                //In the lower loop, print the result of
+                //In the lower loop, print the result ofw
                 //getMultiplicationTableEntry(higherLoopIteration, lowerLoopIteration).
                 System.out.print(GetMultiplicationTableEntry.getMultiplicationTableEntry(j, k));
             }
