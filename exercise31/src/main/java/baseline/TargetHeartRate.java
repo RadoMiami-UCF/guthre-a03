@@ -10,7 +10,6 @@ final class TargetHeartRate {
     private TargetHeartRate() {}
 
     public static int calcHeartRate(int age, int restingHeartRate, double intensity) {
-        //Return (((220 − age) − restingHR) × intensity) + restingHR.
-        return 0;
+        return (int) ((((MAX_HEART_RATE - age) - restingHeartRate) * intensity) + restingHeartRate);
     }
 }
