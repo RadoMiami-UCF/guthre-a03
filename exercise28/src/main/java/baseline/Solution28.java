@@ -7,12 +7,11 @@ package baseline;
 public class Solution28 {
     private static final int NUMBERS_TO_ADD = 5;
     public static void main(String[] args) {
-        //First, create an object with two methods (to set and to get the sum of an array) that contains an array.
+        // First, create an object with two methods (to set and to get the sum of an array) that contains an array.
         // Then, use that object to start a loop that runs 5 times.
         var iArray = new IntArrayStoreAndAdd(NUMBERS_TO_ADD);
         iArray.setIntArray();
-        //After the loop, add all the numbers together.
-        var sumToPrint = iArray.getIntSum();
-        //Finally, print the sum.
+        // After the loop, add all the numbers together and print the sum.
+        System.out.print("The total is " + iArray.getIntSum() + ".");
     }
 }
