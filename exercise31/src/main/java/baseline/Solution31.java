@@ -32,8 +32,17 @@ public class Solution31 {
         }
     }
 
+    //Roses are red, violets are blue... CTRL+C CTRL+V, I just recycled my old code.
     private static int sayThenGetInt(String sayString) {
         System.out.print(sayString);
-        return in.nextInt();
+        var gotInt = false;
+        var getInt = 0;
+        while(!gotInt) {
+            try {
+                getInt = Integer.parseInt(in.nextLine());
+                gotInt = true;
+            } catch (NumberFormatException ignored) {/*Not doing anything if there's an exception*/}
+        }
+        return getInt;
     }
 }
