@@ -14,14 +14,14 @@ public class Solution34 {
     public static final Scanner in = new Scanner(System.in, StandardCharsets.UTF_8);
 
     public static void main(String[] args) {
-        //There actually isn't anything I can test here, since I'm just using functions that already exist and work.
+        //Me using 100% of my brain to try and extrapolate test cases for this:
         //Furthermore, given the simplicity of 34, I can go back to one-class solutions!
         //First, make an arraylist containing the 5 names.
         ArrayList<String> employeeList = new ArrayList<>(INITIAL_EMPLOYEE_LIST_SIZE);
         employeeList.addAll(Arrays.asList("John Smith", "Jackie Jackson", "Chris Jones", "Amanda Cullen",
                 "Jeremy Goodwin"));
         //Then, call sayArrayList(employeeList).
-        sayArrayList(employeeList);
+        System.out.print(sayArrayList(employeeList));
         //Then, ask for an employee name to remove.
         System.out.print("\nEnter an employee name to remove: ");
         //Then, remove the employee using remove(employeeName), and use trimToSize if necessary.
@@ -30,15 +30,16 @@ public class Solution34 {
         //Linebreak for formatting!
         System.out.print("\n");
         //Finally, call sayArrayList(employeeList) again.
-        sayArrayList(employeeList);
+        System.out.print(sayArrayList(employeeList));
     }
 
-    private static void sayArrayList(ArrayList<String> arrayListToSay) {
+    public static String sayArrayList(ArrayList<String> arrayListToSay) {
         //First, say the number of employees in the arraylist.
-        System.out.println("There are " + arrayListToSay.size() + " employees: ");
+        var sayStringBuilder = new StringBuilder("There are " + arrayListToSay.size() + " employees:\n");
         //Then, use a loop to iterate through all the objects in the arraylist and say each one.
         for (String s : arrayListToSay) {
-            System.out.println(s);
+            sayStringBuilder.append(s).append("\n");
         }
+        return sayStringBuilder.toString();
     }
 }
