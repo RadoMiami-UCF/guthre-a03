@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Solution33 {
     public static final Scanner in = new Scanner(System.in, StandardCharsets.UTF_8);
+
     public static void main(String[] args) {
         //Then, ask for a question. (Probably don't have to do anything with it.)
         System.out.print("What's your question?\n> ");
