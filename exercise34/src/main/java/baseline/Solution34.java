@@ -34,7 +34,7 @@ public class Solution34 {
         System.out.print(sayArrayList(employeeList));
     }
 
-    public static String sayArrayList(Collection<String> arrayListToSay) {
+    private static String sayArrayList(Collection<String> arrayListToSay) {
         //First, say the number of employees in the arraylist.
         var sayStringBuilder = new StringBuilder("There are " + arrayListToSay.size() + " employees:\n");
         //Then, use a loop to iterate through all the objects in the arraylist and say each one.
