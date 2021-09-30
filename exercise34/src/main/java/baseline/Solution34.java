@@ -7,6 +7,7 @@ package baseline;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Solution34 {
@@ -33,7 +34,7 @@ public class Solution34 {
         System.out.print(sayArrayList(employeeList));
     }
 
-    public static String sayArrayList(ArrayList<String> arrayListToSay) {
+    public static String sayArrayList(Collection<String> arrayListToSay) {
         //First, say the number of employees in the arraylist.
         var sayStringBuilder = new StringBuilder("There are " + arrayListToSay.size() + " employees:\n");
         //Then, use a loop to iterate through all the objects in the arraylist and say each one.
