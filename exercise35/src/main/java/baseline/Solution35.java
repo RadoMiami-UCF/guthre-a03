@@ -29,7 +29,8 @@ public class Solution35 {
         something lame like that.
          */
         while(true) {
-            if (!hasNewName(entrantList)) {
+            System.out.print("Enter a name: ");
+            if (!hasNewName(entrantList, in.nextLine())) {
                 break;
             }
         }
@@ -39,12 +40,24 @@ public class Solution35 {
 
         //Finally, call pickRandomName to pick and say a random name.
         var randomNumberGenerator = new Random();
-        pickRandomName(entrantList, randomNumberGenerator);
+
+        /*
+        Using this simple program as an excuse to learn how to exception handle properly.
+        Note: using loggers wasn't as bad as I thought! Why wasn't I always doing this?
+        Use an object of type Random to get a random number between 0 and the size of the array - 1 and say that the
+        string at that index in the arraylist is the winner.
+        */
+        try {
+            System.out.print(pickName(entrantList, randomNumberGenerator.nextInt(entrantList.size())));
+        } catch (IllegalArgumentException exception) {
+            var logger = Logger.getLogger("logger");
+            logger.log(WARNING, "No names were entered", exception);
+            System.out.print("You must enter at least one name!");
+        }
+
     }
 
-    public static boolean hasNewName(Collection<String> stringArrayList) {
-        System.out.print("Enter a name: ");
-        var nextName = in.nextLine();
+    private static boolean hasNewName(Collection<String> stringArrayList, String nextName) {
         if("".equals(nextName)) {
             return false;
         } else {
@@ -53,22 +66,8 @@ public class Solution35 {
         }
     }
 
-    public static void pickRandomName(List<String> nameList, Random randomNumberGenerator) {
-        //Using this simple program as an excuse to learn how to exception handle properly.
-        //Note: using loggers wasn't as bad as I thought! Why wasn't I always doing this?
-
-        try {
-            /*
-            Use an object of type Random to get a random number between 0 and the size of the array - 1 and say
-            that the string at that index in the arraylist is the winner.
-             */
+    private static String pickName(List<String> nameList, int nameIndex) {
             //Then, say that the string at that index in the arraylist is the winner.
-            System.out.print("The winner is... " + nameList.get(randomNumberGenerator.nextInt(nameList.size()))
-                    + ".");
-        } catch (IllegalArgumentException exception) {
-            var logger = Logger.getLogger("logger");
-            logger.log(WARNING, "No names were entered", exception);
-            System.out.print("You must enter at least one name!");
-        }
+            return ("The winner is... " + nameList.get(nameIndex) + ".");
     }
 }
