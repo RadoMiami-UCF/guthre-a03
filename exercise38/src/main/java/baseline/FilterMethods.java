@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 final class FilterMethods {
-    private static final Logger EXCEPTION_LOGGER = Logger.getLogger("filterMethodsLogger");
+    private static final Logger LOGGER = Logger.getLogger("Logger.FilterMethods");
     private static final int EVEN_NUMBER_MODULO = 2;
 
     private FilterMethods() {}
@@ -21,11 +21,11 @@ final class FilterMethods {
         for(String numberToFilter : numbersToFilter) {
             //If the integer is even, add it to evenNumberList.
             try {
-                if(Integer.parseInt(numberToFilter) % EVEN_NUMBER_MODULO == 0) {
+                if(!"".equals(numberToFilter) && Integer.parseInt(numberToFilter) % EVEN_NUMBER_MODULO == 0) {
                     evenNumberList.add(Integer.parseInt(numberToFilter));
                 }
             } catch (NumberFormatException exception) {
-                EXCEPTION_LOGGER.log(Level.WARNING, "Member of array numbersToFilter was not an integer!");
+                LOGGER.log(Level.WARNING, "Member of array numbersToFilter was not an integer!");
             }
 
         }
