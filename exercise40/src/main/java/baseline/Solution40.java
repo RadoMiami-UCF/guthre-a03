@@ -18,6 +18,8 @@ public class Solution40 {
     You might notice how similar the code is to Solution40. This is because it's a direct copy and paste, since the
     base is almost exactly the same as 39, and instead of reinventing the wheel, I thought I might want to save
     myself the headache.
+    Also, remember that mistake I made a while back where I forgot to commit and push the pseudocode before finishing
+    the implementation? Yeah, I did that again. Oops!
      */
     private static final int SPACES_TO_ADD_TO_NAME = 2;
     private static final int MINIMUM_NAME_LENGTH = 5;
@@ -104,9 +106,15 @@ public class Solution40 {
 
     private static void trimUnneededEntries(Collection<Map<Integer, EmployeeData>> mapArrayList,
                                             String regexToMatchAgainst) {
+        ArrayList<Map<Integer, EmployeeData>> modifiedMapArrayList = (ArrayList<Map<Integer, EmployeeData>>)
+                mapArrayList;
         /*
         Go through every map in the list. If the searchString isn't found anywhere in either name, then delete the map
         from the list.
          */
+        String finalRegexToMatchAgainst = ".*" + regexToMatchAgainst + ".*";
+        modifiedMapArrayList.removeIf(integerEmployeeDataMap -> !Pattern.matches(finalRegexToMatchAgainst,
+                integerEmployeeDataMap.get(0).getFirstName()) &&
+                !Pattern.matches(finalRegexToMatchAgainst, integerEmployeeDataMap.get(0).getLastName()));
     }
 }
